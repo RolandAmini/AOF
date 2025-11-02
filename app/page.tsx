@@ -85,32 +85,11 @@ export default function Home() {
         {/* Texte de chargement */}
         <div className="mb-8 text-center animate-slide-up">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            Alaska Fisheries
+        action-future
           </h2>
-          <p className="text-white/90 text-lg font-medium">
-            Premium Sustainable Seafood
-          </p>
+          
         </div>
 
-        {/* Barre de progression */}
-        <div className="w-64 md:w-80 bg-white/20 rounded-full h-2 overflow-hidden backdrop-blur-sm">
-          <div
-            className="h-full bg-white rounded-full transition-all duration-300 ease-out shadow-lg"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-
-        {/* Pourcentage */}
-        <p className="mt-4 text-white font-semibold text-lg">
-          {progress}%
-        </p>
-
-        {/* Animation de points */}
-        <div className="flex gap-2 mt-6">
-          <span className="w-2 h-2 bg-white rounded-full animate-bounce"></span>
-          <span className="w-2 h-2 bg-white rounded-full animate-bounce [animation-delay:0.2s]"></span>
-          <span className="w-2 h-2 bg-white rounded-full animate-bounce [animation-delay:0.4s]"></span>
-        </div>
       </div>
     );
   }
