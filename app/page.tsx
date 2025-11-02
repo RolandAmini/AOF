@@ -73,8 +73,8 @@ export default function Home() {
         <div className="relative mb-8 animate-fade-in">
           <div className="absolute inset-0 blur-3xl bg-white/30 rounded-full animate-pulse"></div>
           <Image
-            src="/images/logo.png"
-            alt="Alaska Fisheries Logo"
+            src="/action.png"
+            alt="  action-future logo"
             width={250}
             height={100}
             className="relative z-10 animate-scale-in"
