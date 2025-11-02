@@ -94,15 +94,15 @@ export default function OrganizationalChart() {
     ]
   };
 
-  const getColorClasses = (color) => {
-    const colors = {
-      red: 'border-red-500 bg-red-50',
-      gray: 'border-gray-500 bg-gray-50',
-      teal: 'border-teal-500 bg-teal-50',
-      orange: 'border-orange-500 bg-orange-50'
-    };
-    return colors[color] || 'border-blue-500 bg-blue-50';
+const getColorClasses = (color: string): string => {
+  const colors: Record<string, string> = {
+    red: 'border-red-500 bg-red-50',
+    gray: 'border-gray-500 bg-gray-50',
+    teal: 'border-teal-500 bg-teal-50',
+    orange: 'border-orange-500 bg-orange-50'
   };
+  return colors[color] || 'border-blue-500 bg-blue-50';
+};
 
   return (
     <>

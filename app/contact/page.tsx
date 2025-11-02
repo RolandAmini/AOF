@@ -15,19 +15,14 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Formulaire soumis:', formData);
-    alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const { name, value } = e.target;
+  setFormData(prev => ({
+    ...prev,
+    [name]: value
+  }));
+};
 
   const contactInfo = [
     {
@@ -66,6 +61,11 @@ export default function ContactPage() {
     { icon: Instagram, link: '#', color: 'bg-pink-600' },
     { icon: Linkedin, link: '#', color: 'bg-blue-700' }
   ];
+    const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log("Formulaire soumis :", formData);
+    alert("✅ Merci pour votre message ! Nous vous répondrons bientôt.");
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -212,7 +212,8 @@ export default function ContactPage() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="5"
+                    rows={5}
+
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
                     placeholder="Écrivez votre message ici..."
                     required
@@ -239,7 +240,8 @@ export default function ContactPage() {
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen=""
+                    allowFullScreen={true}
+
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Carte de localisation - Goma, RDC"
